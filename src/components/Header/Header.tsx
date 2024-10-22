@@ -1,6 +1,8 @@
 'use client'
 import { cn } from "@/lib/utils"
 import Search from "../Search/Search"
+import Image from "next/image"
+import Link from "next/link"
 
 
 interface IHeaderProps {
@@ -17,8 +19,9 @@ export default function Header({className}:IHeaderProps) {
               className)}
         >
           
-          <div className="logo">
-            <p className="text-xl font-bold w-fit mx-auto sm:mx-0">Logo</p>
+          <div className="relative">
+            <Link href='/' className="absolute w-full h-full"/>
+            <Image className="text-white" src='/images/logo.svg' width={100} height={100} alt="Logo"/>
           </div>
 
           <div 
