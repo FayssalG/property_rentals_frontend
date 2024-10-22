@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import {Inter,Poppins,Roboto_Mono} from 'next/font/google';
 import localFont from "next/font/local";
 import "./globals.css";
 
@@ -11,6 +12,24 @@ const geistMono = localFont({
   src: "./fonts/GeistMonoVF.woff",
   variable: "--font-geist-mono",
   weight: "100 900",
+});
+
+const inter = Inter({
+  subsets: ['latin'],
+  display: 'swap',
+  variable: '--font-inter',
+})
+
+const roboto_mono = Roboto_Mono({
+  subsets: ['latin'],
+  display: 'swap',
+  variable: '--font-roboto-mono',
+})
+
+const poppins = Poppins({
+  subsets:['latin'],
+  weight : ['100' , '200' , '300' ,'500' , '800'],
+  variable: '--font-poppins'
 });
 
 export const metadata: Metadata = {
@@ -26,7 +45,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${inter.variable} ${roboto_mono.variable}`}
       >
         {children}
       </body>
