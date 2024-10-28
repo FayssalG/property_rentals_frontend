@@ -17,11 +17,11 @@ import { Drawer, DrawerClose, DrawerContent, DrawerTrigger } from "@/components/
 import Image from "next/image";
 
 interface IshowpageProps {
-    property : Property ,
+    data : {property : Property , locationName:string , locationSlug:string} ,
     relatedProperties: Property[]
 }
 
-export default function Showpage({property,relatedProperties} : IshowpageProps) {
+export default function Showpage({data,relatedProperties} : IshowpageProps) {
     const handleCopieReference = (ref:string)=>{
             navigator.clipboard.writeText(ref)
             .then(() => {
@@ -31,6 +31,9 @@ export default function Showpage({property,relatedProperties} : IshowpageProps) 
                 console.error('Failed to copy text: ', err);
             });
     } 
+
+    const {property , locationName , locationSlug} = data
+    console.log({locationName})
   return (
     <>
     <div className="mx-4  sm:mt-24 sm:container sm:mx-auto lg:w-3/4 font-light  text-md">
@@ -41,7 +44,7 @@ export default function Showpage({property,relatedProperties} : IshowpageProps) 
                 </BreadcrumbItem>
                 <BreadcrumbSeparator/>
                 <BreadcrumbItem className="hover:text-black">
-                    <Link href={"/"+property?.location?.slug}>{property?.location?.name}</Link>
+                    <Link href={"/"+locationSlug}>{locationName}</Link>
                 </BreadcrumbItem>
                 <BreadcrumbSeparator/>
                 <BreadcrumbItem>

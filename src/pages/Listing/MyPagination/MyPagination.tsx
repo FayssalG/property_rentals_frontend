@@ -11,16 +11,17 @@ interface IMyPagination {
 
 export default function MyPagination({currentPage , lastPage} : IMyPagination) {
 
+    console.log({lastPage});
     const  renderPagination = useCallback(()=>{
         const els = []
         const maxNumberToShow = 4;
         const totalPages = lastPage;
 
         if(maxNumberToShow >= totalPages){
-            for(let i=1; i<=maxNumberToShow ; i++){
+            for(let i=1; i<=totalPages ; i++){
                 els.push(
                     <PaginationItem className={cn("rounded-full",i==currentPage && 'bg-black text-white')}>
-                        <PaginationLink href={"?page=1"}>{i}</PaginationLink>
+                        <PaginationLink href={"?page="+i}>{i}</PaginationLink>
                     </PaginationItem>
                 )
             }

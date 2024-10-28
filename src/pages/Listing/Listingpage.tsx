@@ -38,7 +38,7 @@ function filtersReducer(state : Filters , {type , payload}:{type:string , payloa
 
 interface IListingpageProps {
     locationSlug : string,
-    initialData : {properties : Property[] , results:number , totalPages:number}
+    initialData : {properties : Property[] , results:{total:number} , totalPages:number , locationName:string}
 }
 
 export default function Listingpage({initialData,locationSlug} : IListingpageProps) {
@@ -46,11 +46,12 @@ export default function Listingpage({initialData,locationSlug} : IListingpagePro
     const searchParams = useSearchParams();
     const currentPage = Number(searchParams?.get('page')) || 1;
     
-    const {isPending , error , data } = useQuery({
+    const {isLoading , error , data } = useQuery({
         queryKey:['houses',currentPage],
         queryFn : ()=>fetchPropertiesByLocation(locationSlug,{pageParam:currentPage , sortParam:sortBy?.split('_')[0] , orderParam:sortBy?.split('_')[1],filterParam:filterBy}),
         initialData : initialData
     })
+
     const [totalPages , setTotalPages] = useState(data?.totalPages);
     const [filters , dispatch] = useReducer(filtersReducer, {filterBy:null , sortBy:null})
     const {sortBy , filterBy} = filters
@@ -67,7 +68,7 @@ export default function Listingpage({initialData,locationSlug} : IListingpagePro
         dispatch({type:'FILTER' , payload:(filterValue ?? null)})
     }
       
-    
+
     if(error) return 'error occured '+error.message;
     
     const filteredData = useMemo(()=>{
@@ -86,8 +87,8 @@ export default function Listingpage({initialData,locationSlug} : IListingpagePro
         
     },[data,sortBy,filterBy])
 
-    const {properties} = data
-    const location : string = properties[0]?.location?.name;
+    const {locationName} = data
+
 
     return (
     <div>        
@@ -100,7 +101,7 @@ export default function Listingpage({initialData,locationSlug} : IListingpagePro
                     </BreadcrumbItem>
                     <BreadcrumbSeparator/>
                     <BreadcrumbItem>
-                        <p className="text-black" >{location}</p>
+                        <p className="text-black" >{locationName}</p>
                     </BreadcrumbItem>
 
                 </Breadcrumb>
@@ -109,8 +110,8 @@ export default function Listingpage({initialData,locationSlug} : IListingpagePro
             <div className="mt-4 flex items-center gap-2">
                 <CiLocationOn size={29}/>
                 <div className="">
-                    <h1 className="text-2xl font-bold">{location.toUpperCase()}</h1>
-                    <p className="font-thin text-slate-400">{data?.results} resultats</p>
+                    <h1 className="text-2xl font-bold">{locationName.toUpperCase()}</h1>
+                    <p className="font-thin text-slate-400">{data?.results.total} resultats</p>
                 </div>
             </div>
 
@@ -121,20 +122,22 @@ export default function Listingpage({initialData,locationSlug} : IListingpagePro
                     >
                         <button className="" onClick={()=>handleFilter(0)}>
                             <NavigationMenuLink  className={cn(navigationMenuTriggerStyle() , 'px-2 me-1', menuActiveIndex==0?'bg-white text-green-500':'')}>
-                                Tous (100)
+                                Tous ({data.results.total})
                             </NavigationMenuLink>
                         </button>
                     </NavigationMenuItem>       
 
                     {
                     ['appartement','garage','maison'].map((el , index)=>{
+                        const count = data.results[el];
+                        if(count == 0) return
                         return(
                             <NavigationMenuItem 
                                 className={cn('cursor-pointer',menuActiveIndex==(index+1)?" ":'')}
                             >
-                                <button className="" onClick={()=>handleFilter(index+1 , el)}>
+                                <button onClick={()=>handleFilter(index+1 , el)}>
                                     <NavigationMenuLink  className={cn(navigationMenuTriggerStyle() , 'px-2 me-1', menuActiveIndex==(index+1)?'bg-white text-green-500':'')}>
-                                        {el} ({(index+1)*15})
+                                        {el} ({count})
                                     </NavigationMenuLink>
                                 </button>
                             </NavigationMenuItem>       
@@ -159,7 +162,7 @@ export default function Listingpage({initialData,locationSlug} : IListingpagePro
             <Separator className="my-4"/>
             
             <div className="flex flex-wrap mt-5 gap-x-10 gap-y-10  justify-center lg:justify-start  ">
-                {   isPending ?
+                {   isLoading ?
                         (new Array(8)).fill(1).map(()=>(
                             <CardSkeleton/>                            
                         ))

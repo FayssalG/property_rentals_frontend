@@ -14,6 +14,8 @@ export type Property = {
   price : number
 } 
 
+
+
 const fetchHouses = async ()=>{
   return fetch('http://localhost:4000/houses').then(res=>res.json())
 } 

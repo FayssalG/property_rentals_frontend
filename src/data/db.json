@@ -103,10 +103,71 @@
             "bathrooms" : 1,
             "price" : 2000,
             "slug" : "logement-entier-maison-safi-maroc"
+        },
+
+        {
+            "title" : "Logement entier : Maison - Rabat, Maroc",
+            "photos" : [
+                "https://www.sarouty.ma/property/1711460800/668/452/MODE/01f69e/880605-9acd3o.webp",
+                "https://www.sarouty.ma/property/1711460800/668/452/MODE/e4814e/880605-f96ddo.webp",
+                "https://www.sarouty.ma/property/1711460800/668/452/MODE/fc6678/880605-13e62o.webp",
+                "https://www.sarouty.ma/property/1711460800/668/452/MODE/d171d8/880605-35e86o.webp",
+                "https://www.sarouty.ma/property/1711460800/668/452/MODE/f1c2bf/880605-964d8o.webp",
+                "https://www.sarouty.ma/property/1711460800/668/452/MODE/f905ea/880605-7141bo.webp"
+            ],
+            "type" : "maison",
+            "description" : "Studio confortable à Palmier...",
+            "photo" : "https://www.sarouty.ma/property/fa36183c129d5672f9671240d77f8b9f/338/248/MODE/29ddeb/875306-d5028o.jpg",
+            "cityId" : 3,
+            "locationId" : null,
+            "rooms": 3,
+            "bathrooms" : 2,
+            "price" : 4500,
+            "slug" : "logement-entier-maison-rabat-maroc"
+        },
+
+        {
+            "title" : "Logement entier : Maison - Agadir, Maroc",
+            "photos" : [
+                "https://www.sarouty.ma/property/1711460800/668/452/MODE/01f69e/880605-9acd3o.webp",
+                "https://www.sarouty.ma/property/1711460800/668/452/MODE/e4814e/880605-f96ddo.webp",
+                "https://www.sarouty.ma/property/1711460800/668/452/MODE/fc6678/880605-13e62o.webp",
+                "https://www.sarouty.ma/property/1711460800/668/452/MODE/d171d8/880605-35e86o.webp",
+                "https://www.sarouty.ma/property/1711460800/668/452/MODE/f1c2bf/880605-964d8o.webp",
+                "https://www.sarouty.ma/property/1711460800/668/452/MODE/f905ea/880605-7141bo.webp"
+            ],
+            "type" : "maison",
+            "description" : "Studio confortable à Palmier...",
+            "photo" : "https://www.sarouty.ma/property/fa36183c129d5672f9671240d77f8b9f/338/248/MODE/29ddeb/875306-d5028o.jpg",
+            "cityId" : 6,
+            "locationId" : null,
+            "rooms": 3,
+            "bathrooms" : 2,
+            "price" : 5500,
+            "slug" : "logement-entier-maison-agadir-maroc"
+        },
+
+
+        {
+            "title" : "Logement entier : Maison - Marrakech, Maroc",
+            "photos" : [
+                "https://www.sarouty.ma/property/1711460800/668/452/MODE/01f69e/880605-9acd3o.webp",
+                "https://www.sarouty.ma/property/1711460800/668/452/MODE/e4814e/880605-f96ddo.webp",
+                "https://www.sarouty.ma/property/1711460800/668/452/MODE/fc6678/880605-13e62o.webp",
+                "https://www.sarouty.ma/property/1711460800/668/452/MODE/d171d8/880605-35e86o.webp",
+                "https://www.sarouty.ma/property/1711460800/668/452/MODE/f1c2bf/880605-964d8o.webp",
+                "https://www.sarouty.ma/property/1711460800/668/452/MODE/f905ea/880605-7141bo.webp"
+            ],
+            "type" : "maison",
+            "description" : "Studio confortable à Palmier...",
+            "photo" : "https://www.sarouty.ma/property/fa36183c129d5672f9671240d77f8b9f/338/248/MODE/29ddeb/875306-d5028o.jpg",
+            "cityId" : 4,
+            "locationId" : null,
+            "rooms": 3,
+            "bathrooms" : 2,
+            "price" : 5000,
+            "slug" : "logement-entier-maison-marrakech-maroc"
         }
-
-
- 
     ],
 
     "cities" : [
@@ -119,8 +180,27 @@
             "id":2,
             "name" : "Safi",
             "slug" : "safi"            
+        },
+        {
+            "id":3,
+            "name" : "Rabat",
+            "slug" : "rabat"
+        },
+        {
+            "id":4,
+            "name" : "Marrakech",
+            "slug" : "marrakech"
+        },
+        {
+            "id":5,
+            "name" : "Tanger",
+            "slug" : "tanger"
+        },
+        {
+            "id":6,
+            "name" : "Agadir",
+            "slug" : "agadir"
         }
-
     ],
 
     "locations" : [

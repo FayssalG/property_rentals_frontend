@@ -100,37 +100,38 @@ export default function Homepage({properties} : IHomepageProps ) {
             <h2 className="text-xl text-center min-w-0 shrink-0 grow-0 basis-[33%] lg:text-nowrap">Tout l'immobilier au Maroc en vente ou location!</h2>
             <Separator className="hidden w-0 min-w-0 shrink-0 grow-0 basis-[33%] lg:block"/>
           </div>
+
           <div className={cn('[&>div]:rounded-lg h-full mt-6  gap-4 grid grid-cols-1  sm:px-0 md:grid-cols-2 lg:grid-cols-3 ')}>            
               <div className="relative bg-cover bg-[url('/images/casablanca.jpeg')] flex items-end md:row-span-2">
-                <Link href='' className='absolute top-0 left-0 w-full h-full transition-all duration-500 hover:bg-black/50 rounded-lg '/>
+                <Link href='/casablanca' className='absolute top-0 left-0 w-full h-full transition-all duration-500 hover:bg-black/50 rounded-lg '/>
                 <p className="rounded-b-lg w-full text-white uppercase font-bold p-4 bg-black/40 ">
                   Casablanca
                 </p>
               </div>
 
               <div className="relative bg-cover bg-[url('/images/rabat.jpg')] flex items-end">
-                <Link href='' className='absolute top-0 left-0 w-full h-full transition-all duration-500 hover:bg-black/50 rounded-lg '/>
+                <Link href='/rabat' className='absolute top-0 left-0 w-full h-full transition-all duration-500 hover:bg-black/50 rounded-lg '/>
                 <p className="rounded-b-lg w-full text-white uppercase font-bold p-4 bg-black/40 ">
                   Rabat
                 </p>
               </div>
 
               <div className="relative bg-cover bg-[url('/images/agadir.jpg')] flex items-end md:row-span-2 lg:row-span-3 ">
-                <Link href='' className='absolute top-0 left-0 w-full h-full transition-all duration-500 hover:bg-black/50 rounded-lg '/>
+                <Link href='/agadir' className='absolute top-0 left-0 w-full h-full transition-all duration-500 hover:bg-black/50 rounded-lg '/>
                 <p className="rounded-b-lg w-full text-white uppercase font-bold p-4 bg-black/40 ">
                   Agadir
                 </p>
               </div>
 
               <div className="relative bg-cover bg-[url('/images/marrakech.png')] flex items-end ">
-                <Link href='' className='absolute top-0 left-0 w-full h-full transition-all duration-500 hover:bg-black/50 rounded-lg '/>
+                <Link href='/marrakech' className='absolute top-0 left-0 w-full h-full transition-all duration-500 hover:bg-black/50 rounded-lg '/>
                 <p className="rounded-b-lg w-full text-white uppercase font-bold p-4 bg-black/40 ">
                   Marrakech
                 </p>
               </div>
 
               <div className="relative bg-cover bg-center bg-[url('/images/tanger.jpg')] flex items-end md:col-span-2">
-                <Link href='' className='absolute top-0 left-0 w-full h-full transition-all duration-500 hover:bg-black/50 rounded-lg '/>
+                <Link href='/tanger' className='absolute top-0 left-0 w-full h-full transition-all duration-500 hover:bg-black/50 rounded-lg '/>
                 <p className="rounded-b-lg w-full text-white uppercase font-bold p-4 bg-black/40 ">
                   Tanger
                 </p>
