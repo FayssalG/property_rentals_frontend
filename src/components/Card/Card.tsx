@@ -1,6 +1,6 @@
 'use client'
 
-import { House, Property } from "@/app/page";
+import {  Property } from "@/app/page";
 import Carousel from "@/components/Carousel/Carousel";
 import Search from "@/components/Search/Search";
 import { cn } from "@/lib/utils";
@@ -16,7 +16,7 @@ interface ICardProps {
 
 export default function Card({property} : ICardProps) {
   return (
-    <div className="min-w-0  sm:grow-0 sm:shrink-0 sm:basis-[44%] md:basis-[40%] lg:basis-[22%]">
+    <div className="relative min-w-0  sm:grow-0 sm:shrink-0 sm:basis-[44%] md:basis-[40%] lg:basis-[22%]">
         <div className=" w-full h-64 bg-gray-200 rounded-lg">
             <Image 
                 className="w-full h-full object-cover rounded-lg" 
@@ -25,7 +25,6 @@ export default function Card({property} : ICardProps) {
             />
         </div>        
         <div className="mt-2">
-            <Link href={`/${property?.location?.slug}/${property?.slug}`}>
                 <h2 className="text-md font-bold">
                     {property.title}
                 </h2>
@@ -38,8 +37,9 @@ export default function Card({property} : ICardProps) {
                 <p className="font-mono font-bold mt-1">
                     {property.price} DH
                 </p>
-            </Link>
         </div>
+        <Link className="absolute top-0 left-0 w-full h-full z-20" href={`/${property?.location?.slug}/${property?.slug}`}></Link>
+         
     </div>
   )
 }
