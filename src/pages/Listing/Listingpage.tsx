@@ -116,6 +116,10 @@ export default function Listingpage({initialData,locationSlug} : IListingpagePro
             </div>
 
             <div className="flex flex-col mt-5 gap-4 items-start sm:flex-row sm:justify-between  ">
+                {
+                filteredData?.length > 0 &&                        
+
+                
                 <NavigationMenu className="list-none flex-wrap justify-start">
                     <NavigationMenuItem 
                         className={cn('cursor-pointer',menuActiveIndex==0?" ":'')}
@@ -145,7 +149,8 @@ export default function Listingpage({initialData,locationSlug} : IListingpagePro
                         })
                     }
                 </NavigationMenu>        
-                
+                }
+                                
                 <div className="order-first">
                     <Select onValueChange={handleSortBy}>
                         <SelectTrigger className='w-[180px] bg-slate-50 text-black'>
@@ -170,6 +175,13 @@ export default function Listingpage({initialData,locationSlug} : IListingpagePro
                     filteredData.map((property : Property , index : number)=>
                         <Card key={index} property={property} />      
                     )
+                }
+
+                {
+                    !filteredData.length &&
+                    <div className="w-full h-72 flex items-center justify-center">
+                        <p className="text-slate-500">Aucune proprieté trouvé </p>
+                    </div>
                 }
             </div>
 

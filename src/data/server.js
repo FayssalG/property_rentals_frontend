@@ -8,6 +8,25 @@ const middlewares = jsonServer.defaults();
 server.use(middlewares);
 
 // Custom routes
+server.get('/recent-properties' , (req,res)=>{
+  const limit = req.query?._limit ;
+  let properties = router.db.get('houses').value();
+
+  if(limit) properties = properties.slice(0,limit)
+    
+  const newProperties = properties.map((p)=>{
+    if(p.locationId){
+      const location = router.db.get('locations').find({id:p.locationId}).value();
+      return {...p,location};
+    }
+    const city = router.db.get('cities').find({id:p.cityId}).value();
+    return {...p , location:city}
+  
+  })
+
+  res.jsonp(newProperties);
+})
+
 server.get('/houses-by-location/:locationSlug', (req, res,next) => {
   const locationSlug = req.params.locationSlug;
   const location = router.db.get('locations').find({slug:locationSlug}).value();
@@ -20,22 +39,34 @@ server.get('/houses-by-location/:locationSlug', (req, res,next) => {
   const startIndex = (page - 1) * limit;
   const endIndex = page * limit;
 
+  const types = ['appartement','garage','maison']; 
+  
+
   if(location){
     const housesByLocation = houses.filter((h)=>h.locationId == location?.id).map((h)=>({...h,location}))
     const paginatedHouses = housesByLocation.slice(startIndex , endIndex);
-    const resultCount = housesByLocation.length
-    const totalPages = Math.ceil(resultCount/limit);
-    res.jsonp({locationName:location.name,properties:paginatedHouses , results:resultCount , totalPages:totalPages});
-  
-  }else if(city){
-    const housesByLocation = houses.filter((h)=>h.cityId == city?.id).map((h)=>({...h,location:city}))
-    const paginatedHouses = housesByLocation.slice(startIndex , endIndex);
-    const resultCount = housesByLocation.length
-    
-    const types = ['appartement','garage','maison']; 
     const results = {
       total:housesByLocation.length,
     }
+    const totalPages = Math.ceil(results.total/limit);
+
+    types.forEach((t)=>{
+      results[t] = 0;
+    })
+
+    housesByLocation.forEach((p)=>{
+      results[p.type] = results[p.type]+1;
+    })
+  
+    res.jsonp({locationName:location.name,properties:paginatedHouses , results:results , totalPages:totalPages});
+  
+  }else if(city){
+    const housesByLocation = houses.filter((h)=>h.cityId == city?.id).map((h)=>({...h,location:city}))
+    const paginatedHouses = housesByLocation.slice(startIndex , endIndex);    
+    const results = {
+      total:housesByLocation.length,
+    }
+    const totalPages = Math.ceil(results.total/limit);    
 
     types.forEach((t)=>{
       results[t] = 0;
@@ -45,7 +76,6 @@ server.get('/houses-by-location/:locationSlug', (req, res,next) => {
       results[p.type] = results[p.type]+1;
     })
     
-    const totalPages = Math.ceil(resultCount/limit);
     res.jsonp({locationName:city.name,properties:paginatedHouses , results , totalPages:totalPages});
   }
   else{

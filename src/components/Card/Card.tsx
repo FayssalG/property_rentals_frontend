@@ -51,11 +51,11 @@ export function CardSkeleton(){
                 <Skeleton className="h-full w-full" />
             </div>        
             <div className="mt-2">
-                        <Skeleton className="h-4 w-full" />
+                <Skeleton className="h-4 w-full" />
 
-                        <Skeleton className="h-4 w-1/2 mt-2" />               
+                <Skeleton className="h-4 w-1/2 mt-2" />               
 
-                        <Skeleton className="h-4 w-1/3 mt-2" />               
+                <Skeleton className="h-4 w-1/3 mt-2" />               
             </div>
         </div>  
         )

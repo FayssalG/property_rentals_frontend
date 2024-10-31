@@ -10,8 +10,8 @@ type Params = {
 }
 
 
-export const fetchProperties = async (params : Params)=>{
-    let url =  `http://localhost:4000/houses?_expand=location&_limit=${MAX_PAGE_LIMIT}&_page=${params.pageParam}`;
+export const fetchProperties = async (params : Params | undefined)=>{
+    let url =  `http://localhost:4000/houses?_expand=location&_limit=${MAX_PAGE_LIMIT}&_page=${params?.pageParam}`;
     if(params?.sortParam) url = url.concat("&_sort="+params.sortParam);
     if(params?.orderParam) url = url.concat("&_order="+params.orderParam)
     if(params?.filterParam) url = url.concat("&_type="+params.filterParam)

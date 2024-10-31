@@ -1,3 +1,5 @@
+'use client'
+
 import React, { useEffect, useRef, useState } from 'react'
 import { FiSearch } from 'react-icons/fi'
 import Dropdown from './Dropdown/Dropdown'
@@ -6,8 +8,11 @@ import DropdownElements, { DropdownElement } from './Dropdown/DropdownElements'
 import { cn } from '@/lib/utils'
 import AutoComplete from './AutoComplete/AutoComplete'
 import { useQuery } from '@tanstack/react-query'
+import { useRouter } from 'next/navigation'
+
 
 export default function Search({className} : {className?:string}) {
+  const router = useRouter();
   const {data , isLoading , refetch} = useQuery({
     queryKey : ['autocomplete'],
     queryFn : ()=>{
@@ -19,12 +24,44 @@ export default function Search({className} : {className?:string}) {
 
 
   const [searchValue , setSearchValue] = useState<string>('');
-  const [selectValue , setSelectValue]  = useState<string>('');
   const [debouncedSearchValue , setDebouncedSearchValue] = useState<string>('');
   
   const autoCompleteRef = useRef<HTMLDivElement>(null);
   const [showAutoComplete , setShowAutoComplete] = useState<boolean>(false);
   
+  //handling autocomplete result selection using arrowup and arrowdown
+  const inputRef = useRef<HTMLInputElement>(null);
+  const listItemsRefs = useRef([]);
+  const [selectedIndex , setSelectedIndex] = useState(-1);
+
+  const handleKeyDown = (e) => {
+      if(e.key == 'ArrowDown'){
+          setSelectedIndex((prevIndex)=>{
+              const newValue = prevIndex+1;
+              if(listItemsRefs.current.length <= newValue) return prevIndex
+              return newValue;
+          })
+      }
+
+      if(e.key == 'ArrowUp'){
+          setSelectedIndex((prevIndex)=>{
+              const newValue = prevIndex-1;
+              if(newValue < 0) {
+                return prevIndex
+              }
+              return newValue;
+          })
+      }
+
+      if(e.key == 'Enter'){
+          if(selectedIndex >= 0 && selectedIndex < listItemsRefs.current.length){
+            const href = (listItemsRefs.current[selectedIndex].children[1].href);
+            router.push(href);
+          }
+      }
+  }
+
+
   const handleChooseFromAutoComplete = (location : string)=>{
     setSearchValue(location);
     setShowAutoComplete(false);
@@ -35,9 +72,6 @@ export default function Search({className} : {className?:string}) {
     setSearchValue(e.target.value);
   }
 
-  const handleSelectChange = (value:string)=>{
-    setSelectValue(value);
-  }
 
   useEffect(()=>{
     if(!searchValue) setShowAutoComplete(false);
@@ -73,9 +107,9 @@ export default function Search({className} : {className?:string}) {
   },[showAutoComplete])
 
   return (
-    <div className={cn('relative',className)}>        
+    <div onKeyDown={handleKeyDown} className={cn('relative',className)}>        
         <div className={cn('relative text-sm flex items-center min-w-12 ps-4 py-1 pe-1 z-40  bg-white rounded-full h-full')}>
-            <input value={searchValue} onInput={handleTyping} type="text" className='min-w-0 grow bg-transparent focus:outline-none' placeholder='Ou chercher vous ?' />
+            <input ref={inputRef} value={searchValue} onInput={handleTyping} type="text" className='min-w-0 grow bg-transparent focus:outline-none' placeholder='Ou chercher vous ?' />
            
             {/* <Dropdown onChange={handleSelectChange} className='h-full border-s-[.1rem] border-slate-200 font-thin text-xs shadow-sm bg-white rounded-l-full sm:text-sm lg:text-lg '>
                 <DropdownLabel className='text-gray-500'>type de propriété</DropdownLabel>
@@ -94,7 +128,7 @@ export default function Search({className} : {className?:string}) {
             </div>
 
         </div>
-        {showAutoComplete && <AutoComplete isLoading={isLoading} onChoose={handleChooseFromAutoComplete} Ref={autoCompleteRef} data={data}/>}
+        {showAutoComplete && <AutoComplete selectedIndex={selectedIndex} listItemsRefs={listItemsRefs} isLoading={isLoading} Ref={autoCompleteRef} data={data}/>}
 
     </div>
   )

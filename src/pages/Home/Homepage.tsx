@@ -162,7 +162,7 @@ export default function Homepage({properties} : IHomepageProps ) {
                           ))
                       :
                       data.map((property : Property , index : number)=>
-                          <Card key={index} property={property} />      
+                          <Card key={index} property={property}  />      
                       )
                     }
         

@@ -17,7 +17,7 @@ export type Property = {
 
 
 const fetchHouses = async ()=>{
-  return fetch('http://localhost:4000/houses').then(res=>res.json())
+  return fetch('http://localhost:4000/recent-properties?_limit=8').then(res=>res.json())
 } 
 
 
