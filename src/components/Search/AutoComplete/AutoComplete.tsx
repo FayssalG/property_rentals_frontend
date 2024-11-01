@@ -1,5 +1,6 @@
 'use client'
 
+import parse from 'html-react-parser';
 import { cn } from "@/lib/utils"
 import { LoaderPinwheel } from "lucide-react"
 import Link from "next/link"
@@ -7,7 +8,10 @@ import { redirect } from "next/navigation"
 import { useRef, useState } from "react"
 import { CiLocationOn } from "react-icons/ci"
 
-export default function AutoComplete({Ref , data, isLoading , listItemsRefs , selectedIndex} ) {
+export default function AutoComplete({Ref , data, isLoading , listItemsRefs , selectedIndex , searchValue} ) {
+
+
+
 
     if(!data?.length) return null
     
@@ -18,17 +22,25 @@ export default function AutoComplete({Ref , data, isLoading , listItemsRefs , se
                     isLoading && <LoaderPinwheel className="animate-spin"/>
                 }
                 {   
-                    data?.map((location , index : number)=>
+                    data?.map((location , index : number)=>{
+                        const regex = new RegExp(searchValue,'i');
+                        let locationName = location.name.charAt(0).toUpperCase() + location.name.slice(1);
+                        locationName = locationName.replace( regex, '<strong>'+locationName.match(regex)+'</strong>');
+
+                        return(
                         <li ref={(el)=>listItemsRefs.current[index] = el} 
                             className={cn('hover:bg-slate-200  flex items-center gap-2  py-1 px-2',selectedIndex==index ? 'bg-slate-200' : '')}
                             
                         >
                             <CiLocationOn />
                             <Link href={'/'+location.slug} className=''>
-                                {location.name} {location?.city && <span>({location.city.name})</span>}
+                                {
+                                    parse(locationName)
+                                } {location?.city && <span>({location.city.name})</span>}
                             </Link>
                         </li>
-                    )
+                        )
+                    })
                 }                
             </ul>
         </div>

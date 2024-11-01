@@ -123,12 +123,13 @@ export default function Search({className} : {className?:string}) {
             {/* <button className='h-full bg-red-500 text-white w-12 flex items-center justify-center  rounded-full '>
                 <FiSearch/>
             </button> */}
+            
             <div className='h-full w-12 flex items-center justify-center '>
                 <FiSearch/>
             </div>
 
         </div>
-        {showAutoComplete && <AutoComplete selectedIndex={selectedIndex} listItemsRefs={listItemsRefs} isLoading={isLoading} Ref={autoCompleteRef} data={data}/>}
+        {showAutoComplete && <AutoComplete searchValue={searchValue} selectedIndex={selectedIndex} listItemsRefs={listItemsRefs} isLoading={isLoading} Ref={autoCompleteRef} data={data}/>}
 
     </div>
   )

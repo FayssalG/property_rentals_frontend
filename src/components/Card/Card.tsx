@@ -1,9 +1,6 @@
 'use client'
 
 import {  Property } from "@/app/page";
-import Carousel from "@/components/Carousel/Carousel";
-import Search from "@/components/Search/Search";
-import { cn } from "@/lib/utils";
 import Image from "next/image";
 import { ReactElement, useEffect, useRef, useState } from "react";
 import { Skeleton } from "../ui/skeleton";

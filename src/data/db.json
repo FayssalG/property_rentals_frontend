@@ -173,32 +173,32 @@
     "cities" : [
         {
             "id":1,
-            "name" : "Casablanca",
+            "name" : "casablanca",
             "slug" : "casablanca"
         },
         {
             "id":2,
-            "name" : "Safi",
+            "name" : "safi",
             "slug" : "safi"            
         },
         {
             "id":3,
-            "name" : "Rabat",
+            "name" : "rabat",
             "slug" : "rabat"
         },
         {
             "id":4,
-            "name" : "Marrakech",
+            "name" : "marrakech",
             "slug" : "marrakech"
         },
         {
             "id":5,
-            "name" : "Tanger",
+            "name" : "tanger",
             "slug" : "tanger"
         },
         {
             "id":6,
-            "name" : "Agadir",
+            "name" : "agadir",
             "slug" : "agadir"
         }
     ],
@@ -207,14 +207,14 @@
         {
             "cityId":1,
             "id":1,
-            "name" : "Hay Hassani",
+            "name" : "hay hassani",
             "city" : "casablanca",
             "slug" : "hay-hassani-casablanca"
         },
         {
             "cityId":2,
             "id":2,
-            "name" : "Hay Anas",
+            "name" : "hay anas",
             "city" : "safi",
             "slug" : "hay-anas-safi"
         }
