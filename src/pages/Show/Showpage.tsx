@@ -193,7 +193,7 @@ export default function Showpage({data,relatedProperties} : IshowpageProps) {
                 }
             </div>
 
-            <div className="mt-8">
+            {/* <div className="mt-8">
                 <h2 className="font-bold text-2xl">Installations</h2>
                 <div className="mt-4 grid grid-cols-1 gap-y-4 md:grid-cols-2 lg:grid-cols-3">
                     <div className="flex items-center gap-2">
@@ -208,7 +208,7 @@ export default function Showpage({data,relatedProperties} : IshowpageProps) {
                         <p>Dressing</p>
                     </div>
                 </div>
-            </div>
+            </div> */}
         </div>
 
         <div className="my-4 my-20 w-full grid grid-cols-1 items-center gap-4 md:grid-cols-2 lg:my-10 ">

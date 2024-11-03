@@ -87,7 +87,51 @@
             "price" : 3200000 ,
             "slug" : "magnifique-appartement-en-vente-a-plage-des-nations"
             
+        },
+
+        {
+            "id": 5,
+            "title": "APPARTEMENT EXEPTIONNELLE A VENDRE",
+            "description": "D\u00c9COUVREZ L\u2019ESSENCE DE LA VIE DE LUXE<br><br>\nBastet Property a le plaisir de vous pr\u00e9senter ce merveilleux appartement de 2 chambres au c\u0153ur de la ville de Marrakech.<br><br>\nCette propri\u00e9t\u00e9 de 128 m2 est un spacieux appartement de luxe de 2 chambres avec un mobilier haut de gamme, une buanderie et une section utilitaire, du marbre de luxe, une cuisine de service enti\u00e8rement \u00e9quip\u00e9e, un parking souterrain et un concierge 24h/24 et 7j/7<br><br>\nprofitez d\u2019installations de style de vie in\u00e9gal\u00e9es dans la zone de Gu\u00e9liz ainsi que plusieurs am\u00e9nit\u00e9s autours, notamment une acad\u00e9mie de tennis, des magasins, des \u00e9coles, des restaurants et des centre commerciaux.<br><br>\nSi vous souhaitez plus d\u2019informations ou pour organiser une visite, n\u2019h\u00e9sitez pas \u00e0 nous contacter, nous pouvons vous trouver le bien immobilier de vos r\u00eaves \u00e0 Marrakech.",
+            "price": 2650000,
+            "surface": 100,
+            "photos": [
+                "https://www.sarouty.ma/property/15bae2c1b704ce83a51b0906d085e8fb/668/452/MODE/dc1fd2/877142-86586o.jpg?ctr=ma",
+                "https://www.sarouty.ma/property/2aab9b6c4e10113251a57c7d1058acaf/668/452/MODE/18add9/877142-34950o.jpg?ctr=ma",
+                "https://www.sarouty.ma/property/60a58b94a853a52ef0458bc4d21df6b2/668/452/MODE/f905a2/877142-f7d7eo.jpg?ctr=ma",
+                "https://www.sarouty.ma/property/1b4777d3b7b19ae0d6315ad49a10f912/668/452/MODE/54c59f/877142-e651bo.jpg?ctr=ma",
+                "https://www.sarouty.ma/property/a62d4570acfdf1429bc9b120b0259c0d/668/452/MODE/2cac04/877142-abb0ao.jpg?ctr=ma",
+                "https://www.sarouty.ma/property/5b0fa665432952439d8bac2675b827a6/668/452/MODE/2b35c9/877142-0c370o.jpg?ctr=ma",
+                "https://www.sarouty.ma/property/0778ea334ee7b5bfae2db243187d6097/668/452/MODE/d4d565/877142-2a7b5o.jpg?ctr=ma",
+                "https://www.sarouty.ma/property/2755124564cf59cf7565927beede36db/668/452/MODE/7c0a15/877142-984a1o.jpg?ctr=ma",
+                "https://www.sarouty.ma/property/5f15f67824d97e9e1234b833e4873294/668/452/MODE/fac18b/877142-f7d3do.jpg?ctr=ma",
+                "https://www.sarouty.ma/property/379a68e2685bf346ad651af0d92a634d/668/452/MODE/14dac3/877142-45291o.jpg?ctr=ma"
+            ],
+            "slug" : "appartement-exeptionnelle-a-vendre",
+            "cityId":4,
+            "locationId":3
+        },
+        {
+            "id":6,
+            "title": "Nouveaux appartements en vente",
+            "description": "Si vous \u00eates \u00e0 la recherche d\u2019un appartement au c\u0153ur de Tanger, au sein d\u2019une r\u00e9sidence qui met \u00e0 votre disposition, tous les \u00e9quipements et prestations n\u00e9cessaires \u00e0 votre confort et bien-\u00eatre quotidiens, c\u2019est que vous \u00eates \u00e0 la bonne place !<br>\nB\u00e9n\u00e9ficiant d\u2019un emplacement strat\u00e9gique au quartier pris\u00e9 et calme en plein avenue moulay abdelaziz Tanger , Cette r\u00e9sidence est un projet d\u2019exception qui met un  appartement de moyen  standing, dot\u00e9s d\u2019\u00e9quipements de qualit\u00e9 sup\u00e9rieure, d\u2019une superficie de 97m\u00b2 au 1ere  Etage<br><br>\nDes finitions en marbre, des menuiseries et sanitaires de premier choix, des cuisines modernes et plein d\u2019autres avantages vous attendent.<br>\nEn optant pour cet investissement immobilier, vous b\u00e9n\u00e9ficiez d\u2019une proximit\u00e9 imm\u00e9diate de toutes les commodit\u00e9s qui vous sont n\u00e9cessaires.<br><br>\n- A 10 minutes de la plage, city center, Hilton H\u00f4tel et de la gare TGV.<br>\n- A 8 minutes de marjane route de rabat et du centre-ville.<br><br>\nSaisissez l\u2019opportunit\u00e9 d\u2019un quotidien confortable ! Achetez votre appartement au sein de notre r\u00e9sidence.",
+            "price": 950600,
+            "surface": 97,
+            "photos": [
+                "https://www.sarouty.ma/property/d5abecf975c01b3a00727ec4cc412e18/668/452/MODE/2427ec/832364-7811fo.jpg?ctr=ma",
+                "https://www.sarouty.ma/property/66c2e4bc11d063668e2d9072b54d3659/668/452/MODE/c4b0ae/832364-cdb59o.jpg?ctr=ma",
+                "https://www.sarouty.ma/property/c2792647cf26568af10cf54b91464a98/668/452/MODE/ea9751/832364-da59ao.jpg?ctr=ma",
+                "https://www.sarouty.ma/property/fec36cc33df57b9d052055265b940c2a/668/452/MODE/bdb1b2/832364-4b56eo.jpg?ctr=ma",
+                "https://www.sarouty.ma/property/2d056b6a98e8cfb8394d0f5864c44f28/668/452/MODE/a5d307/832364-8b44eo.jpg?ctr=ma",
+                "https://www.sarouty.ma/property/840109a9e1331520d84b4a201831c602/668/452/MODE/ce423a/832364-59b6ao.jpg?ctr=ma",
+                "https://www.sarouty.ma/property/fad23254d30185c6d31048fae5fa33e2/668/452/MODE/c174e7/832364-bbc8eo.jpg?ctr=ma",
+                "https://www.sarouty.ma/property/d8bf85ef0351301ec21d5e8bad354c75/668/452/MODE/5038bf/832364-fb46ao.jpg?ctr=ma"
+            ],
+            "slug":"nouveaux-appartements-en-vente",
+            "locationId": 4,
+            "cityId":5
         }
+ 
 
 
     ],
@@ -130,15 +174,26 @@
             "cityId":1,
             "id":1,
             "name" : "hay hassani",
-            "city" : "casablanca",
             "slug" : "hay-hassani-casablanca"
         },
         {
             "cityId":1,
             "id":2,
             "name" : "ain diab",
-            "city" : "casablanca",
             "slug" : "ain-diab-casablanca"
+        },
+        {
+            "cityId":4,
+            "id":3,
+            "name" : "gueliz",
+            "slug" : "gueliz"
+        },
+        {
+            "cityId":5,
+            "id":4,
+            "name" : "castilla",
+            "slug" : "castilla"
+
         }
         
     ]
