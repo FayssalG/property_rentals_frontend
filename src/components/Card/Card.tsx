@@ -5,6 +5,7 @@ import Image from "next/image";
 import { ReactElement, useEffect, useRef, useState } from "react";
 import { Skeleton } from "../ui/skeleton";
 import Link from "next/link";
+import { parseNumberForHumans } from "@/lib/utils";
 
 
 interface ICardProps {
@@ -25,14 +26,14 @@ export default function Card({property} : ICardProps) {
                 <h2 className="text-md font-bold">
                     {property.title}
                 </h2>
-                <p className="text-xs text-slate-500  font-thin mt-1">
+                <p className="truncate text-xs text-slate-500  overflow-hidden  font-thin mt-1">
                     {property.description}
                 </p>
                 <p className="text-xs text-xs text-slate-500 font-thin ">
                     {property.rooms} Chambre . {property.bathrooms} Salle de bain
                 </p>
-                <p className="font-mono font-bold mt-1">
-                    {property.price} DH
+                <p className="font-bold mt-1">
+                    {parseNumberForHumans(property.price)} DH
                 </p>
         </div>
         <Link className="absolute top-0 left-0 w-full h-full z-20" href={`/${property?.location?.slug}/${property?.slug}`}></Link>

@@ -15,9 +15,9 @@ import { MdClose, MdOutlineContentCopy, MdOutlineDone, MdOutlineMailOutline } fr
 import { LuClipboardCheck } from "react-icons/lu";
 import { Drawer, DrawerClose, DrawerContent, DrawerTrigger } from "@/components/ui/drawer";
 import Image from "next/image";
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { ChevronDown, ChevronUp } from "lucide-react";
-import { cn } from "@/lib/utils";
+import { cn, parseNumberForHumans } from "@/lib/utils";
 
 interface IshowpageProps {
     data : {property : Property , locationName:string , locationSlug:string} ,
@@ -25,26 +25,17 @@ interface IshowpageProps {
 }
 
 export default function Showpage({data,relatedProperties} : IshowpageProps) {
+    const descriptionRef = useRef(null);
+    const [isTextOverflowing , setIsTextOverflownig] = useState(false)
     const [isTextExpanded , setIsTextExpanded] = useState(false);
-
-
-    const text = parse( `
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis inventore harum asperiores illo earum ab id rerum quidem, illum quod officiis repudiandae beatae accusamus placeat incidunt minima natus sunt reiciendis.
-                    Illo, incidunt. Ratione ab itaque et iusto expedita amet accusantium vero nulla sunt modi. Eum perspiciatis ducimus reprehenderit culpa assumenda quaerat sit fugit soluta ut, officiis eaque aspernatur iste laborum.
-                    <br/>
-                    <br/>
-                    Debitis commodi numquam eum fugiat, doloremque optio temporibus beatae itaque praesentium quam aperiam ab suscipit perferendis delectus? Beatae qui voluptate quas quo iste, distinctio laboriosam optio alias, aliquam vero accusamus?
-                    Saepe libero quod harum dolorum sit laborum doloremque velit cumque consequatur dicta! Deserunt non consequatur quia rerum tempore pariatur, aperiam animi nam, perferendis aspernatur accusamus officiis error nihil omnis quasi?
-                    Maxime soluta laboriosam beatae amet ad natus itaque, omnis eum commodi. Doloremque blanditiis est dolore odio amet nostrum voluptatum error inventore. Velit assumenda sequi iste quia? Iste deserunt doloribus rerum.
-                    <br/>
-                    <br/>
-                    Minus similique nisi animi ratione eius doloremque, iste quisquam repellat, tempore ipsa esse laboriosam velit eos! Nulla ratione eos quae atque facilis qui quo expedita numquam temporibus, earum, deleniti dolore.
-                    Officiis quo doloribus quos eum voluptas accusamus optio est recusandae rem, repudiandae nemo culpa et velit totam blanditiis, voluptatum quia nulla qui assumenda nesciunt similique maiores? Voluptate, perspiciatis. Nisi, sequi!
-                    Consectetur nam veniam ab excepturi iste fugit molestiae fuga omnis iure sed aut tenetur velit deleniti, cupiditate quasi in animi quibusdam officia reiciendis hic, fugiat magnam ducimus. Iste, architecto modi.
-                    Iste illum quam ipsum minima ullam voluptatibus eveniet quas porro molestias deleniti dolore reprehenderit ab sapiente, alias ratione cum inventore nam. Illum placeat vitae perferendis ex ullam dolor, eaque sunt?
-                    Rem veritatis enim cumque facere expedita ipsa nobis hic sunt perferendis perspiciatis sapiente, tempore voluptatum reiciendis. Autem, libero voluptatem sunt amet, commodi voluptatibus sapiente in nulla ut iure error reprehenderit.
-                    Sequi praesentium eum beatae provident ratione quis commodi at similique tempora est autem voluptates ipsa aut inventore error, voluptatem repudiandae quasi veniam voluptatum delectus rem! Perferendis suscipit labore velit cum.`
-                )
+    console.log({isTextOverflowing});
+    useEffect(()=>{
+        if(descriptionRef.current){
+            setIsTextOverflownig(
+                descriptionRef.current?.clientHeight < descriptionRef.current?.scrollHeight
+            )
+        }
+    },[isTextOverflowing])
 
     const handleCopieReference = (ref:string)=>{
             navigator.clipboard.writeText(ref)
@@ -58,7 +49,8 @@ export default function Showpage({data,relatedProperties} : IshowpageProps) {
 
     const {property , locationName , locationSlug} = data
     console.log({locationName})
-  return (
+  
+    return (
     <>
     <div className="mx-4  sm:mt-24 sm:container sm:mx-auto lg:w-3/4 font-light  text-md">
         <div>
@@ -115,7 +107,6 @@ export default function Showpage({data,relatedProperties} : IshowpageProps) {
                             </div>
                         </DrawerContent>
                     </Drawer>
-
             </div>
 
             <div className=" h-full ">
@@ -129,9 +120,9 @@ export default function Showpage({data,relatedProperties} : IshowpageProps) {
                     </h1>
 
                     <p className="font-light text-sm text-slate-500">
-                        Appartement à Louer à Hay Hassani ( 160 m² )
+                        Appartement à Louer à Hay Hassani ( {property.surface} m² )
                         <br/>                    
-                        {property?.rooms} pieces . {property?.bathrooms} salles de bain . Non-meublé
+                        {property?.rooms} pieces . {property?.bathrooms} salles de bain 
                     </p>
                     
                     <div className="mt-2">
@@ -158,7 +149,7 @@ export default function Showpage({data,relatedProperties} : IshowpageProps) {
 
                 <div className="mt-10">
                     <h2 className="text-4xl  flex gap-2">
-                        <span className="font-bold">{property.price}</span>
+                        <span className="font-bold">{parseNumberForHumans(property.price)}</span>
                         <span className="font-thin">Dh/Mois</span>
                     </h2>
                     <div className="flex gap-2 mt-2">
@@ -181,19 +172,25 @@ export default function Showpage({data,relatedProperties} : IshowpageProps) {
         <div className=" w-full min-h-72"> 
             <div>
                 <h2 className="font-bold text-2xl">Description</h2>
-                <p 
+                <p  
+                    ref={descriptionRef}
                     className={
-                        cn(`mt-4 tracking-wide text-thin text-md text-slate-500 overflow-hidden lg:text-lg`,
-                            !isTextExpanded ? 'h-56 text-ellipsis ' : ''
+                        cn(`mt-4 tracking-wide text-thin h-56 text-md text-slate-500 overflow-hidden lg:text-lg`,
+                            !isTextExpanded ? 'text-ellipsis turncate' : 'h-auto'
                         )
                     }
                 >
-                    {text}
+                    {parse(property.description)}
                 </p>
+
+                {
+                isTextOverflowing &&
+                
                 <button onClick={()=>setIsTextExpanded(!isTextExpanded)} className="text-blue-500 flex gap-2">
                      <span>{isTextExpanded==false ? 'Afficher plus' : 'Afficher moins'}</span> 
                     {isTextExpanded==false ? <ChevronDown/> : <ChevronUp/>}
                 </button>
+                }
             </div>
 
             <div className="mt-8">
@@ -215,7 +212,7 @@ export default function Showpage({data,relatedProperties} : IshowpageProps) {
         </div>
 
         <div className="my-4 my-20 w-full grid grid-cols-1 items-center gap-4 md:grid-cols-2 lg:my-10 ">
-            <h3 className="text-sm font-bold grow-1 sm:text-nowrap md:text-md">Plus de propriétés disponibles dans le même quartie</h3>
+            <h3 className="text-sm font-bold grow-1 sm:text-nowrap md:text-md">Plus de propriétés disponibles dans le même ville</h3>
             <Separator className="order-first md:order-last"/>    
 
         </div>

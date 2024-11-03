@@ -1,173 +1,95 @@
 {
     "houses" :[
         {
-            "title" : "Logement entier : Maison - Casablanca, Maroc",
+            "id":1,
+            "title" : "Appartement à vendre à Casablanca",
             "photos" : [
-                "https://www.sarouty.ma/property/1711460800/668/452/MODE/01f69e/880605-9acd3o.webp",
-                "https://www.sarouty.ma/property/1711460800/668/452/MODE/e4814e/880605-f96ddo.webp",
-                "https://www.sarouty.ma/property/1711460800/668/452/MODE/fc6678/880605-13e62o.webp",
-                "https://www.sarouty.ma/property/1711460800/668/452/MODE/d171d8/880605-35e86o.webp",
-                "https://www.sarouty.ma/property/1711460800/668/452/MODE/f1c2bf/880605-964d8o.webp",
-                "https://www.sarouty.ma/property/1711460800/668/452/MODE/f905ea/880605-7141bo.webp"
+                "https://www.sarouty.ma/property/bf38791f848212f2f2746b8c1edf7692/668/452/MODE/89795b/854147-c88a6o.webp?ctr=ma",
+                "https://www.sarouty.ma/property/23338b556d6770e78920d600e95c77e4/668/452/MODE/5fe97f/854147-e3e4fo.webp?ctr=ma",
+                "https://www.sarouty.ma/property/a36936184cdd2aa2d82e85ec19b67191/668/452/MODE/12e02b/854147-6c118o.webp?ctr=ma",
+                "https://www.sarouty.ma/property/eb515b5ca2b37bf2e82e86954cad6fcb/668/452/MODE/332374/854147-559c4o.webp?ctr=ma",
+                "https://www.sarouty.ma/property/33c8f6d93efa7ba63765cd420b23e914/668/452/MODE/026e24/854147-3aa85o.webp?ctr=ma",
+                "https://www.sarouty.ma/property/032bcde9ac5b8650718abbead0e89049/668/452/MODE/5c3172/854147-36d7bo.webp?ctr=ma"
             ],
-            "type" : "maison",
-            "description" : "Studio confortable à Palmier...",
-            "photo" : "https://www.sarouty.ma/property/fa36183c129d5672f9671240d77f8b9f/338/248/MODE/29ddeb/875306-d5028o.jpg",
+            "type" : "appartement",
+            "description" : "Appartement d'une superficie de 140m2 à Racine dans une rue calme et sécurisée vers le bd Massira, dans un bel immeuble au 4ème étage, très bien ensoleillé. Il se compose de deux chambres spacieuses, un grand salon avec cheminée et climatiseur réversible, deux salles de bain, un wc de réception, une grand cuisine avec buanderie et deux places au garage.",
+            "cityId" : 1,
+            "locationId" : null,
+            "rooms": 2,
+            "bathrooms" : 2,
+            "surface" : 140,
+            "price" : 3000000,
+            "slug" : "appartement-a-vendre-a-racine"
+        },
+        
+        {
+            "id":2,
+            "title" : "Très bel appartement de 83m² très bien ensoleillé",
+            "photos" : [
+                "https://www.sarouty.ma/property/68cd43b371e12ffc413d63d24c15885a/668/452/MODE/84dca5/880271-1f5e7o.webp?ctr=ma",
+                "https://www.sarouty.ma/property/d19791f7c5a9c27a6e6e4bfd7d7fca88/668/452/MODE/de435e/880271-f3314o.webp?ctr=ma",
+                "https://www.sarouty.ma/property/c5c66a326784ea8eca0cb899488c76c2/668/452/MODE/fc0210/880271-6d0bco.webp?ctr=ma",
+                "https://www.sarouty.ma/property/fbef98d1d54abfaf863ab3ffec32beff/668/452/MODE/85a8f0/880271-03412o.webp?ctr=ma",
+                "https://www.sarouty.ma/property/b65332bd3caf36861c3baddbbee9b086/668/452/MODE/aff08e/880271-4ab9fo.webp?ctr=ma",
+                "https://www.sarouty.ma/property/1bb16964eeaf5166f35b8dbe11c5a98c/668/452/MODE/ddc6ea/880271-f77f5o.webp?ctr=ma"
+            ],
+            "type" : "appartement",
+            "description" : "Très bel appartement de 83m² très bien ensoleillé, composé d’un salon double, cuisine toute équipée avec buanderie, 2chambres avec placards et 2 salles de bains avec douche à l’italienne, au 3ème étage d’un immeuble neuf avec ascenseur, situé à 2min du rond-point de Azbane, à 2min du tramway et proche de toutes commodités. Place de parking disponible en sous-sol. Vue dégagée sur Casablanca.",
             "cityId" : 1,
             "locationId" : 1,
             "rooms": 2,
-            "bathrooms" : 1,
-            "price" : 2000,
-            "slug" : "logement-entier-maison-casablanca-maroc"
+            "bathrooms" : 2,
+            "surface" : 83,
+            "price" : 1054100,
+            "slug" : "tres-bel-appartement-de-83m"
+            
         },
-
         {
-            "title" : "Logement entier : Maison - Safi, Maroc",
+            "id":3,
+            "title" : "Bien d'exception à vendre à Ain Diab",
             "photos" : [
-                "https://www.sarouty.ma/property/1711460800/668/452/MODE/01f69e/880605-9acd3o.webp",
-                "https://www.sarouty.ma/property/1711460800/668/452/MODE/e4814e/880605-f96ddo.webp",
-                "https://www.sarouty.ma/property/1711460800/668/452/MODE/fc6678/880605-13e62o.webp",
-                "https://www.sarouty.ma/property/1711460800/668/452/MODE/d171d8/880605-35e86o.webp",
-                "https://www.sarouty.ma/property/1711460800/668/452/MODE/f1c2bf/880605-964d8o.webp",
-                "https://www.sarouty.ma/property/1711460800/668/452/MODE/f905ea/880605-7141bo.webp"
+                "https://www.sarouty.ma/property/ad93abbc8d94f0ef802105f74e801e21/668/452/MODE/051ce8/886108-1da0eo.webp?ctr=ma",
+                "https://www.sarouty.ma/property/7c7f0db8fc3061717bc986994a0b45e5/668/452/MODE/ba358a/886108-2fc8co.webp?ctr=ma",
+                "https://www.sarouty.ma/property/8f25fdadb422a6327e5fb230421ea7cf/668/452/MODE/05a92b/886108-151b5o.webp?ctr=ma",
+                "https://www.sarouty.ma/property/39e3dfd3e2ff42b10fff2faa05fcad52/668/452/MODE/0e599d/886108-51071o.webp?ctr=ma",
+                "https://www.sarouty.ma/property/ff69704dbef7ed5006b55c2737b7ea4c/668/452/MODE/75ff42/886108-fa9edo.webp?ctr=ma",
+                "https://www.sarouty.ma/property/a53f9e35f75ce247ca679fe11baa7d4a/668/452/MODE/1f0d75/886108-0c8eeo.webp?ctr=ma"
             ],
             "type" : "appartement",
-            "description" : "Studio confortable à Palmier...",
-            "photo" : "https://www.sarouty.ma/property/fa36183c129d5672f9671240d77f8b9f/338/248/MODE/29ddeb/875306-d5028o.jpg",
-            "cityId" : 2,
-            "locationId" : 2,
-            "rooms": 2,
-            "bathrooms" : 1,
-            "price" : 2000,
-            "slug" : "logement-entier-maison-safi-maroc"
+            "description" : "Très bel appartement de 83m² très bien ensoleillé, composé d’un salon double, cuisine toute équipée avec buanderie, 2chambres avec placards et 2 salles de bains avec douche à l’italienne, au 3ème étage d’un immeuble neuf avec ascenseur, situé à 2min du rond-point de Azbane, à 2min du tramway et proche de toutes commodités. Place de parking disponible en sous-sol. Vue dégagée sur Casablanca.",
+            "cityId" : 1,
+            "locationId" : 1,
+            "rooms": 3,
+            "bathrooms" : 3,
+            "surface" : 350,
+            "price" : 11000000 ,
+            "slug" : "bien-exception-a-vendre-a-ain-diab"
+            
         },
-
         {
-            "title" : "Logement entier : Maison - Safi, Maroc",
+            "id":4,
+            "title" : "Magnifique appartement en vente à Plage des Nations",
             "photos" : [
-                "https://www.sarouty.ma/property/1711460800/668/452/MODE/01f69e/880605-9acd3o.webp",
-                "https://www.sarouty.ma/property/1711460800/668/452/MODE/e4814e/880605-f96ddo.webp",
-                "https://www.sarouty.ma/property/1711460800/668/452/MODE/fc6678/880605-13e62o.webp",
-                "https://www.sarouty.ma/property/1711460800/668/452/MODE/d171d8/880605-35e86o.webp",
-                "https://www.sarouty.ma/property/1711460800/668/452/MODE/f1c2bf/880605-964d8o.webp",
-                "https://www.sarouty.ma/property/1711460800/668/452/MODE/f905ea/880605-7141bo.webp"
+                "https://www.sarouty.ma/property/583f2e17dd8038c0ef9774ba37bd0978/668/452/MODE/1ab4dc/873714-fcd00o.webp?ctr=ma",
+                "https://www.sarouty.ma/property/8895d5d6242ed722a62305d27461b422/668/452/MODE/0677a4/873714-4281ao.webp?ctr=ma",
+                "https://www.sarouty.ma/property/e746f5a317f5e82d8a65c7a8ab21d082/668/452/MODE/cc491a/873714-7399co.webp?ctr=ma",
+                "https://www.sarouty.ma/property/b228c78f77e46e35fe8bdede95537687/668/452/MODE/92ec7b/873714-d8defo.webp?ctr=ma",
+                "https://www.sarouty.ma/property/8e042ad9782e0f96849374bb82ca4dba/668/452/MODE/643197/873714-58ab4o.webp?ctr=ma",
+                "https://www.sarouty.ma/property/6fc814c268e68f63c74b3a33b6215774/668/452/MODE/f40ff4/873714-d5b0co.webp?ctr=ma"
             ],
             "type" : "appartement",
-            "description" : "Studio confortable à Palmier...",
-            "photo" : "https://www.sarouty.ma/property/fa36183c129d5672f9671240d77f8b9f/338/248/MODE/29ddeb/875306-d5028o.jpg",
-            "cityId" : 2,
-            "locationId" : 2,
-            "rooms": 2,
-            "bathrooms" : 1,
-            "price" : 2000,
-            "slug" : "logement-entier-maison-safi-maroc"
-        },
-
-        {
-            "title" : "Logement entier : Maison - Safi, Maroc",
-            "photos" : [
-                "https://www.sarouty.ma/property/1711460800/668/452/MODE/01f69e/880605-9acd3o.webp",
-                "https://www.sarouty.ma/property/1711460800/668/452/MODE/e4814e/880605-f96ddo.webp",
-                "https://www.sarouty.ma/property/1711460800/668/452/MODE/fc6678/880605-13e62o.webp",
-                "https://www.sarouty.ma/property/1711460800/668/452/MODE/d171d8/880605-35e86o.webp",
-                "https://www.sarouty.ma/property/1711460800/668/452/MODE/f1c2bf/880605-964d8o.webp",
-                "https://www.sarouty.ma/property/1711460800/668/452/MODE/f905ea/880605-7141bo.webp"
-            ],
-            "type" : "appartement",
-            "description" : "Studio confortable à Palmier...",
-            "photo" : "https://www.sarouty.ma/property/fa36183c129d5672f9671240d77f8b9f/338/248/MODE/29ddeb/875306-d5028o.jpg",
-            "cityId" : 2,
-            "locationId" : 2,
-            "rooms": 2,
-            "bathrooms" : 1,
-            "price" : 2000,
-            "slug" : "logement-entier-maison-safi-maroc"
-        },
-
-        {
-            "title" : "Logement entier : Maison - Safi, Maroc",
-            "photos" : [
-                "https://www.sarouty.ma/property/1711460800/668/452/MODE/01f69e/880605-9acd3o.webp",
-                "https://www.sarouty.ma/property/1711460800/668/452/MODE/e4814e/880605-f96ddo.webp",
-                "https://www.sarouty.ma/property/1711460800/668/452/MODE/fc6678/880605-13e62o.webp",
-                "https://www.sarouty.ma/property/1711460800/668/452/MODE/d171d8/880605-35e86o.webp",
-                "https://www.sarouty.ma/property/1711460800/668/452/MODE/f1c2bf/880605-964d8o.webp",
-                "https://www.sarouty.ma/property/1711460800/668/452/MODE/f905ea/880605-7141bo.webp"
-            ],
-            "type" : "appartement",
-            "description" : "Studio confortable à Palmier...",
-            "photo" : "https://www.sarouty.ma/property/fa36183c129d5672f9671240d77f8b9f/338/248/MODE/29ddeb/875306-d5028o.jpg",
-            "cityId" : 2,
-            "locationId" : 2,
-            "rooms": 2,
-            "bathrooms" : 1,
-            "price" : 2000,
-            "slug" : "logement-entier-maison-safi-maroc"
-        },
-
-        {
-            "title" : "Logement entier : Maison - Rabat, Maroc",
-            "photos" : [
-                "https://www.sarouty.ma/property/1711460800/668/452/MODE/01f69e/880605-9acd3o.webp",
-                "https://www.sarouty.ma/property/1711460800/668/452/MODE/e4814e/880605-f96ddo.webp",
-                "https://www.sarouty.ma/property/1711460800/668/452/MODE/fc6678/880605-13e62o.webp",
-                "https://www.sarouty.ma/property/1711460800/668/452/MODE/d171d8/880605-35e86o.webp",
-                "https://www.sarouty.ma/property/1711460800/668/452/MODE/f1c2bf/880605-964d8o.webp",
-                "https://www.sarouty.ma/property/1711460800/668/452/MODE/f905ea/880605-7141bo.webp"
-            ],
-            "type" : "maison",
-            "description" : "Studio confortable à Palmier...",
-            "photo" : "https://www.sarouty.ma/property/fa36183c129d5672f9671240d77f8b9f/338/248/MODE/29ddeb/875306-d5028o.jpg",
+            "description" : "Magnifique appartement en bord de mer avec vue imprenable à la prestigieuse résidence de Plage des Nations, Situé dans une résidence fermée et sécurisée, offrant piscines et espaces verts, cet appartement en rez-de-jardin est idéal pour une résidence principale ou secondaire. d'une superficie généreuse de 183 m², il se compose d'une spacieuse réception ouverte dotée d'une cheminée centrale et climatisation centralisée, Vous pourrez profiter de belles terrasses offrant une vue panoramique sur le jardin et la mer.L'appartement comprend également une cuisine, une buanderie, une chambre pour le personnel, une salle d'eau pour les invités, une chambre parentale avec salle de bains attenante, ainsi que deux autres chambres avec salle de douche et WC. De plus, une place de parking au sous-sol est incluse.Cette opportunité exceptionnelle vous permettra de vivre dans un cadre privilégié en front de mer. Ne manquez pas cette chance unique !",
             "cityId" : 3,
             "locationId" : null,
-            "rooms": 3,
+            "rooms": 5,
             "bathrooms" : 2,
-            "price" : 4500,
-            "slug" : "logement-entier-maison-rabat-maroc"
-        },
-
-        {
-            "title" : "Logement entier : Maison - Agadir, Maroc",
-            "photos" : [
-                "https://www.sarouty.ma/property/1711460800/668/452/MODE/01f69e/880605-9acd3o.webp",
-                "https://www.sarouty.ma/property/1711460800/668/452/MODE/e4814e/880605-f96ddo.webp",
-                "https://www.sarouty.ma/property/1711460800/668/452/MODE/fc6678/880605-13e62o.webp",
-                "https://www.sarouty.ma/property/1711460800/668/452/MODE/d171d8/880605-35e86o.webp",
-                "https://www.sarouty.ma/property/1711460800/668/452/MODE/f1c2bf/880605-964d8o.webp",
-                "https://www.sarouty.ma/property/1711460800/668/452/MODE/f905ea/880605-7141bo.webp"
-            ],
-            "type" : "maison",
-            "description" : "Studio confortable à Palmier...",
-            "photo" : "https://www.sarouty.ma/property/fa36183c129d5672f9671240d77f8b9f/338/248/MODE/29ddeb/875306-d5028o.jpg",
-            "cityId" : 6,
-            "locationId" : null,
-            "rooms": 3,
-            "bathrooms" : 2,
-            "price" : 5500,
-            "slug" : "logement-entier-maison-agadir-maroc"
-        },
-
-
-        {
-            "title" : "Logement entier : Maison - Marrakech, Maroc",
-            "photos" : [
-                "https://www.sarouty.ma/property/1711460800/668/452/MODE/01f69e/880605-9acd3o.webp",
-                "https://www.sarouty.ma/property/1711460800/668/452/MODE/e4814e/880605-f96ddo.webp",
-                "https://www.sarouty.ma/property/1711460800/668/452/MODE/fc6678/880605-13e62o.webp",
-                "https://www.sarouty.ma/property/1711460800/668/452/MODE/d171d8/880605-35e86o.webp",
-                "https://www.sarouty.ma/property/1711460800/668/452/MODE/f1c2bf/880605-964d8o.webp",
-                "https://www.sarouty.ma/property/1711460800/668/452/MODE/f905ea/880605-7141bo.webp"
-            ],
-            "type" : "maison",
-            "description" : "Studio confortable à Palmier...",
-            "photo" : "https://www.sarouty.ma/property/fa36183c129d5672f9671240d77f8b9f/338/248/MODE/29ddeb/875306-d5028o.jpg",
-            "cityId" : 4,
-            "locationId" : null,
-            "rooms": 3,
-            "bathrooms" : 2,
-            "price" : 5000,
-            "slug" : "logement-entier-maison-marrakech-maroc"
+            "surface" : 183,
+            "price" : 3200000 ,
+            "slug" : "magnifique-appartement-en-vente-a-plage-des-nations"
+            
         }
+
+
     ],
 
     "cities" : [
@@ -212,11 +134,12 @@
             "slug" : "hay-hassani-casablanca"
         },
         {
-            "cityId":2,
+            "cityId":1,
             "id":2,
-            "name" : "hay anas",
-            "city" : "safi",
-            "slug" : "hay-anas-safi"
+            "name" : "ain diab",
+            "city" : "casablanca",
+            "slug" : "ain-diab-casablanca"
         }
+        
     ]
 }

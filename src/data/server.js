@@ -119,22 +119,25 @@ server.get('/property', (req, res,next) => {
     const propertyLocationId = property.locationId;
     const propertyCityId = property.cityId;
     
-    let location;
+    let locationOrCity;
     if(propertyLocationId){
-      location = router.db.get('locations').find({id:property.locationId}).value(); 
+      locationOrCity = router.db.get('locations').find({id:property.locationId}).value(); 
     }else{
-      location = router.db.get('cities').find({id:property.cityId}).value(); 
-    }
+      locationOrCity = router.db.get('cities').find({id:property.cityId}).value(); 
+    } 
+
+    let city = router.db.get('cities').find({id:property.cityId}).value();
 
     if(withRelated==false){
       return res.jsonp({property , locationName:location.name , locationSlug:location.slug});
     }
 
     const relatedProperties = router.db.get('houses').filter((p)=>{
-      return (p.cityId == location.id || p.locationId == location.id) && p.id != property.id;
-    })
+      return (p.cityId == city.id ) && p.id != property.id;
+    }).value();
 
-    return res.jsonp({property, relatedProperties , locationName:location.name , locationSlug:location.slug});
+  
+    return res.jsonp({property, relatedProperties , locationName:locationOrCity.name , locationSlug:locationOrCity.slug});
   
   }
   else{

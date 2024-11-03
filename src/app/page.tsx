@@ -3,6 +3,7 @@ import Homepage from "@/pages/Home/Homepage";
 import Layout from "@/pages/Layout";
 
 export type Property = {
+  surface : number,
   type:string,
   photos:string[],
   title : string,
