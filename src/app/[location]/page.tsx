@@ -7,7 +7,7 @@ import { notFound } from "next/navigation";
 
 
 
-export default async function Listing({params}) {
+export default async function Listing({params} : {params:{location:string}}) {
   const {location:locationSlug} = params;
   const data = await fetchPropertiesByLocation(locationSlug);
   

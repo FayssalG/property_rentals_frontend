@@ -2,9 +2,6 @@
 
 import React, { useEffect, useRef, useState } from 'react'
 import { FiSearch } from 'react-icons/fi'
-import Dropdown from './Dropdown/Dropdown'
-import DropdownLabel from './Dropdown/DropdownLabel'
-import DropdownElements, { DropdownElement } from './Dropdown/DropdownElements'
 import { cn } from '@/lib/utils'
 import AutoComplete from './AutoComplete/AutoComplete'
 import { useQuery } from '@tanstack/react-query'
@@ -16,7 +13,7 @@ export default function Search({className} : {className?:string}) {
   const {data , isLoading , refetch} = useQuery({
     queryKey : ['autocomplete'],
     queryFn : ()=>{
-      return fetch(`http://localhost:4000/locations-autocomplete?name_like=${debouncedSearchValue.toLowerCase().trim()}`).then((res)=>res.json());
+      return fetch(`${process.env.NEXT_PUBLIC_BACKEND_URL}/locations-autocomplete?name_like=${debouncedSearchValue.toLowerCase().trim()}`).then((res)=>res.json());
     },
     enabled:false     
   })
@@ -129,7 +126,7 @@ export default function Search({className} : {className?:string}) {
             </div>
 
         </div>
-        {showAutoComplete && <AutoComplete searchValue={searchValue} selectedIndex={selectedIndex} listItemsRefs={listItemsRefs} isLoading={isLoading} Ref={autoCompleteRef} data={data}/>}
+        {showAutoComplete && <AutoComplete searchValue={searchValue} selectedIndex={selectedIndex} listItemsRefs={listItemsRefs} isLoading={isLoading} ref={autoCompleteRef} data={data}/>}
 
     </div>
   )

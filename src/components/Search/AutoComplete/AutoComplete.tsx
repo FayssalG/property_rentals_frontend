@@ -5,18 +5,29 @@ import { cn } from "@/lib/utils"
 import { LoaderPinwheel } from "lucide-react"
 import Link from "next/link"
 import { redirect } from "next/navigation"
-import { useRef, useState } from "react"
+import { forwardRef, useRef, useState } from "react"
 import { CiLocationOn } from "react-icons/ci"
 
-export default function AutoComplete({Ref , data, isLoading , listItemsRefs , selectedIndex , searchValue} ) {
+interface IAutoCompleteProps {
+    data : {name : string , slug:string , city:{name:string,slug:string}}[], 
+    isLoading:boolean,
+    listItemsRefs : HTMLLIElement[],
+    selectedIndex : number,
+    searchValue : string 
+}
 
+const AutoComplete = forwardRef(
 
+function (
+    { data, isLoading , listItemsRefs , selectedIndex , searchValue}:IAutoCompleteProps,
+    ref : React.ForwardedRef 
+) {   
 
 
     if(!data?.length) return null
     
     return (
-        <div ref={Ref} className='absolute  drop-shadow overflow-y-hidden w-full z-20 bg-white left-0 top-0 rounded-b-lg rounded-t-3xl '>
+        <div ref={ref} className='absolute  drop-shadow overflow-y-hidden w-full z-20 bg-white left-0 top-0 rounded-b-lg rounded-t-3xl '>
             <ul className='border-t-[.02rem] overflow-y-auto max-h-52 pt-12  flex flex-col gap-1'>
                 {
                     isLoading && <LoaderPinwheel className="animate-spin"/>
@@ -46,4 +57,7 @@ export default function AutoComplete({Ref , data, isLoading , listItemsRefs , se
         </div>
 
     )
-}
+})
+
+
+export default AutoComplete
