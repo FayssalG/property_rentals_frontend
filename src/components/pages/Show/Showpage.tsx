@@ -48,7 +48,6 @@ export default function Showpage({data,relatedProperties} : IshowpageProps) {
     } 
 
     const {property , locationName , locationSlug} = data
-    console.log({locationName})
   
     return (
     <>

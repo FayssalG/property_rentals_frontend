@@ -18,7 +18,7 @@ export type Property = {
 
 
 const fetchHouses = async ()=>{
-  return fetch(process.env.NEXT_PUBLIC_BACKEND_URL+'/recent-properties?_limit=8').then(res=>res.json())
+  return fetch(process.env.BACKEND_URL+'/recent-properties?_limit=8').then(res=>res.json())
 } 
 
 

@@ -44,7 +44,7 @@ function (
                             
                         >
                             <CiLocationOn />
-                            <Link href={'/'+location.slug} className=''>
+                            <Link href={'/'+location.slug} >
                                 {
                                     parse(locationName)
                                 } {location?.city && <span>({location.city.name})</span>}

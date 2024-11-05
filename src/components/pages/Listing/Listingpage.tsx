@@ -1,9 +1,8 @@
 'use client'
 
-import { fetchProperties, fetchPropertiesByLocation } from "@/api/fetch";
+import { fetchPropertiesByLocation } from "@/api/fetch";
 import { Property } from "@/app/page";
 import Card, { CardSkeleton } from "@/components/Card/Card";
-import Header from "@/components/Header/Header";
 import { Button } from "@/components/ui/button";
 import { NavigationMenu, NavigationMenuItem, NavigationMenuLink, navigationMenuTriggerStyle } from "@/components/ui/navigation-menu";
 import { Pagination, PaginationContent, PaginationEllipsis, PaginationItem, PaginationLink, PaginationNext, PaginationPrevious } from "@/components/ui/pagination";
@@ -41,12 +40,11 @@ interface IListingpageProps {
 }
 
 export default function Listingpage({initialData,locationSlug} : IListingpageProps) {
-    // const queryClient = useQueryClient();
     const searchParams = useSearchParams();
     const currentPage = Number(searchParams?.get('page')) || 1;
     
     const {isLoading , error , data } = useQuery({
-        queryKey:['houses',currentPage],
+        queryKey:[locationSlug,currentPage],
         queryFn : ()=>fetchPropertiesByLocation(locationSlug,{pageParam:currentPage , sortParam:sortBy?.split('_')[0] , orderParam:sortBy?.split('_')[1],filterParam:filterBy}),
         initialData : initialData
     })
