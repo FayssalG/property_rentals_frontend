@@ -13,7 +13,7 @@ interface IdropdownValue  {
     handleChoose : Function,
 }
 
-const dropdownContext = createContext<IdropdownValue>(null);
+const dropdownContext = createContext<IdropdownValue | null>(null);
 export const useDropdown = ()=>{
     return useContext(dropdownContext);
 }

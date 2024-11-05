@@ -1,4 +1,3 @@
-'use client'
 
 import React, { useEffect, useRef, useState } from 'react'
 import { FiSearch } from 'react-icons/fi'
@@ -28,7 +27,7 @@ export default function Search({className} : {className?:string}) {
   
   //handling autocomplete result selection using arrowup and arrowdown
   const inputRef = useRef<HTMLInputElement>(null);
-  const listItemsRefs = useRef([]);
+  const listItemsRefs = useRef<HTMLLIElement[]>([]);
   const [selectedIndex , setSelectedIndex] = useState(-1);
 
   const handleKeyDown = (e) => {

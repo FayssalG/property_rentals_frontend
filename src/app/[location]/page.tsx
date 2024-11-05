@@ -1,7 +1,8 @@
+
 import { fetchPropertiesByLocation } from "@/api/fetch";
 import Header from "@/components/Header/Header";
-import Layout from "@/pages/Layout";
-import Listingpage from "@/pages/Listing/Listingpage";
+import Layout from "@/components/pages/Layout";
+import Listingpage from "@/components/pages/Listing/Listingpage";
 import { notFound } from "next/navigation";
 
 

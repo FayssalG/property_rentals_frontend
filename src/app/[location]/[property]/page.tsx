@@ -1,6 +1,6 @@
 import Header from "@/components/Header/Header";
-import Layout from "@/pages/Layout";
-import Showpage from "@/pages/Show/Showpage";
+import Layout from "@/components/pages/Layout";
+import Showpage from "@/components/pages/Show/Showpage";
 import { notFound, useParams } from "next/navigation";
 import { Property } from "../../page";
 import {  fetchPropertiesRelated, fetchProperty } from "@/api/fetch";

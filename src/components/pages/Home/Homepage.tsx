@@ -23,7 +23,7 @@ export default function Homepage({properties} : IHomepageProps ) {
   
     const {isPending , error , data} = useQuery({
       queryKey:['houses'] , 
-      queryFn: ()=>fetch('http://localhost:4000/houses?_limit=8').then(res=>res.json()),
+      queryFn: ()=>fetch(process.env.NEXT_PUBLIC_BACKEND_URL+'/houses?_limit=8').then(res=>res.json()),
       initialData:properties
     });
 

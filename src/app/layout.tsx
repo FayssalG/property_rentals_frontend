@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import {Inter,Poppins,Roboto_Mono} from 'next/font/google';
 import localFont from "next/font/local";
 import "./globals.css";
+import Providers from "./providers";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -43,12 +44,14 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
+
     <html lang="en">
       <body
         className={`${inter.variable} ${roboto_mono.variable}`}
-      >
-        {children}
+      >  
+        <Providers>{children}</Providers>
       </body>
     </html>
+
   );
 }

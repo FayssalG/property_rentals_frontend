@@ -1,5 +1,5 @@
 import Header from "@/components/Header/Header";
-import Layout from "@/pages/Layout";
+import Layout from "@/components/pages/Layout";
 import { LoaderPinwheel } from "lucide-react";
 
 export default function loading() {

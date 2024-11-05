@@ -1,6 +1,6 @@
 
-import Homepage from "@/pages/Home/Homepage";
-import Layout from "@/pages/Layout";
+import Homepage from "@/components/pages/Home/Homepage";
+import Layout from "@/components/pages/Layout";
 
 export type Property = {
   surface : number,
@@ -18,16 +18,18 @@ export type Property = {
 
 
 const fetchHouses = async ()=>{
-  return fetch('http://localhost:4000/recent-properties?_limit=8').then(res=>res.json())
+  return fetch(process.env.NEXT_PUBLIC_BACKEND_URL+'/recent-properties?_limit=8').then(res=>res.json())
 } 
 
 
 export default async function Home() {
   const properties : Property[] = await fetchHouses();
 
+  
   return (
     <Layout>
       <Homepage properties={properties}/>
     </Layout>
   );
 }
+

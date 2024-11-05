@@ -1,6 +1,6 @@
 import Header from "@/components/Header/Header";
-import Layout from "@/pages/Layout";
-import ShowpageSkeleton from "@/pages/Show/ShowpageSkeleton";
+import Layout from "@/components/pages/Layout";
+import ShowpageSkeleton from "@/components/pages/Show/ShowpageSkeleton";
 
 export default function loading() {
   return (

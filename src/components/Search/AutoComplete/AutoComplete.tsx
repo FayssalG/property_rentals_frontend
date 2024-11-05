@@ -5,22 +5,22 @@ import { cn } from "@/lib/utils"
 import { LoaderPinwheel } from "lucide-react"
 import Link from "next/link"
 import { redirect } from "next/navigation"
-import { forwardRef, useRef, useState } from "react"
+import React, { ForwardedRef, forwardRef, useRef, useState } from "react"
 import { CiLocationOn } from "react-icons/ci"
 
 interface IAutoCompleteProps {
     data : {name : string , slug:string , city:{name:string,slug:string}}[], 
     isLoading:boolean,
-    listItemsRefs : HTMLLIElement[],
+    listItemsRefs : {current:HTMLLIElement[]},
     selectedIndex : number,
     searchValue : string 
 }
 
-const AutoComplete = forwardRef(
+const AutoComplete = forwardRef<HTMLDivElement , IAutoCompleteProps>(
 
 function (
-    { data, isLoading , listItemsRefs , selectedIndex , searchValue}:IAutoCompleteProps,
-    ref : React.ForwardedRef 
+    { data, isLoading , listItemsRefs , selectedIndex , searchValue},
+    ref 
 ) {   
 
 
@@ -39,7 +39,7 @@ function (
                         locationName = locationName.replace( regex, '<strong>'+locationName.match(regex)+'</strong>');
 
                         return(
-                        <li ref={(el)=>listItemsRefs.current[index] = el} 
+                        <li ref={(el : HTMLLIElement)=>{listItemsRefs.current[index] = el; return undefined}} 
                             className={cn('hover:bg-slate-200  flex items-center gap-2  py-1 px-2',selectedIndex==index ? 'bg-slate-200' : '')}
                             
                         >
